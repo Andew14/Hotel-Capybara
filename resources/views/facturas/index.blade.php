@@ -56,7 +56,7 @@
                             <!-- View details or print could go here -->
                             <!-- View details or print could go here -->
                                 <a href="{{ route('facturas.edit', $factura['idFactura']) }}" style="color: var(--accent-color); text-decoration: none; margin-right: 10px;">Editar</a>
-                                <form action="{{ route('facturas.destroy', $factura['idFactura']) }}" method="POST" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar esta factura?');">
+                                <form action="{{ route('facturas.destroy', $factura['idFactura']) }}" method="POST" style="display:inline;" onsubmit="return alertDelete(event, '¿Estás seguro de eliminar esta factura?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" style="background:none; border:none; color: var(--error-color); cursor:pointer; text-decoration: underline;">Eliminar</button>

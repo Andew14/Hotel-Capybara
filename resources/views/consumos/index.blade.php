@@ -55,7 +55,7 @@
                         <td style="padding: 1rem;">{{ \Carbon\Carbon::parse($consumo['fechaConsumo'])->format('d/m/Y H:i') }}</td>
                         <td style="padding: 1rem;">
                             <a href="{{ route('consumos.edit', $consumo['idConsumo']) }}" style="color: var(--accent-color); text-decoration: none; margin-right: 10px;">Editar</a>
-                            <form action="{{ route('consumos.destroy', $consumo['idConsumo']) }}" method="POST" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar este consumo?');">
+                            <form action="{{ route('consumos.destroy', $consumo['idConsumo']) }}" method="POST" style="display:inline;" onsubmit="return alertDelete(event, '¿Estás seguro de eliminar este consumo?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" style="background:none; border:none; color: var(--error-color); cursor:pointer; text-decoration: underline;">Eliminar</button>

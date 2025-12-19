@@ -49,7 +49,7 @@
                         <td style="padding: 1rem;">{{ $categoria['descripcion'] }}</td>
                         <td style="padding: 1rem;">
                             <a href="{{ route('categorias.edit', $categoria['idCategoria']) }}" style="color: var(--accent-color); text-decoration: none; margin-right: 10px;">Editar</a>
-                            <form action="{{ route('categorias.destroy', $categoria['idCategoria']) }}" method="POST" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar esta categoría?');">
+                            <form action="{{ route('categorias.destroy', $categoria['idCategoria']) }}" method="POST" style="display:inline;" onsubmit="return alertDelete(event, '¿Estás seguro de eliminar esta categoría?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" style="background:none; border:none; color: var(--error-color); cursor:pointer; text-decoration: underline;">Eliminar</button>

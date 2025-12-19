@@ -36,8 +36,8 @@
             @if(Session::get('role') === 'Administrador')
                 <a href="{{ route('categorias.index') }}" class="btn btn-primary" style="width: auto; text-align: center;">Categorías</a>
                 <a href="{{ route('consumos.index') }}" class="btn btn-primary" style="width: auto; text-align: center;">Consumos</a>
-                <a href="{{ route('roles.index') }}" class="btn btn-primary" style="width: auto; text-align: center; background-color: var(--secondary-color); border: 1px solid var(--accent-color); color: var(--accent-color);">Roles</a>
-                <a href="{{ route('usuarios.index') }}" class="btn btn-primary" style="width: auto; text-align: center; background-color: var(--secondary-color); border: 1px solid var(--accent-color); color: var(--accent-color);">Usuarios</a>
+                <a href="{{ route('roles.index') }}" class="btn btn-primary" style="width: auto; text-align: center;">Roles</a>
+                <a href="{{ route('usuarios.index') }}" class="btn btn-primary" style="width: auto; text-align: center;">Usuarios</a>
             @endif
         </div>
     </div>

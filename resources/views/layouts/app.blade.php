@@ -14,5 +14,35 @@
 </head>
 <body>
     @yield('content')
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function alertDelete(e, message) {
+            if (!message) message = "¿Estás seguro de eliminar este registro?";
+            e.preventDefault();
+            const form = e.target;
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: message,
+                icon: 'warning',
+                iconColor: '#D4A373',
+                showCancelButton: true,
+                confirmButtonColor: '#D4A373',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar',
+                background: '#272c28',
+                color: '#F1F2F6',
+                customClass: {
+                    popup: 'glass-popup'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit(); // Bypass the onsubmit handler to avoid loop if needed, but since we removed return confirm, form.submit() works
+                }
+            });
+            return false;
+        }
+    </script>
 </body>
 </html>

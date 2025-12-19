@@ -56,7 +56,7 @@
                         @if(Session::get('role') === 'Administrador')
                         <td style="padding: 1rem;">
                             <a href="{{ route('roles.edit', $rol['idRol']) }}" style="color: var(--accent-color); text-decoration: none; margin-right: 10px;">Editar</a>
-                            <form action="{{ route('roles.destroy', $rol['idRol']) }}" method="POST" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar este rol?');">
+                            <form action="{{ route('roles.destroy', $rol['idRol']) }}" method="POST" style="display:inline;" onsubmit="return alertDelete(event, '¿Estás seguro de eliminar este rol?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" style="background:none; border:none; color: var(--error-color); cursor:pointer; text-decoration: underline;">Eliminar</button>

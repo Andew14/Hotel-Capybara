@@ -60,7 +60,7 @@
                         @if(Session::get('role') === 'Administrador')
                         <td style="padding: 1rem;">
                             <a href="{{ route('servicios.edit', $servicio['idServicio']) }}" style="color: var(--accent-color); text-decoration: none; margin-right: 10px;">Editar</a>
-                            <form action="{{ route('servicios.destroy', $servicio['idServicio']) }}" method="POST" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar este servicio?');">
+                            <form action="{{ route('servicios.destroy', $servicio['idServicio']) }}" method="POST" style="display:inline;" onsubmit="return alertDelete(event, '¿Estás seguro de eliminar este servicio?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" style="background:none; border:none; color: var(--error-color); cursor:pointer; text-decoration: underline;">Eliminar</button>
