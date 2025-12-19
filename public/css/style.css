@@ -1,0 +1,298 @@
+:root {
+    /* Nature / Capybara Inspired Palette (Professional Dark Theme) */
+    /* Dark Green/Brown tones for background to simulate nature at night/premium lodge */
+    --primary-color: #2D3436;
+    /* Charcoal */
+    --secondary-color: #272c28;
+    /* Deep Forest/Charcoal mixture for cards */
+
+    /* Warm Earthy Accent */
+    --accent-color: #D4A373;
+    /* Sand/Gold - Premium but earthy */
+
+    /* Text */
+    --text-color: #F1F2F6;
+
+    /* Backgrounds */
+    --bg-color: #1E2220;
+    /* Very Dark Greenish Gray */
+    --bg-gradient-start: #1E2220;
+    --bg-gradient-end: #101211;
+
+    /* Inputs */
+    --input-bg: #353b37;
+    --input-border: #525a55;
+
+    /* Functional */
+    --success-color: #55E6C1;
+    /* Bright Mint */
+    --error-color: #FAB1A0;
+    /* Soft Salmon Red */
+}
+
+body {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    /* Adding Outfit for modern look if available, else Inter */
+    background-color: var(--bg-color);
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+    background: rgba(39, 44, 40, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Login Card */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    position: relative;
+}
+
+.login-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(16, 18, 17, 0.7);
+    /* Overlay to make text pop */
+}
+
+.login-card {
+    position: relative;
+    background-color: rgba(39, 44, 40, 0.85);
+    /* Semi-transparent */
+    backdrop-filter: blur(12px);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    border: 1px solid rgba(212, 163, 115, 0.2);
+}
+
+.login-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.login-subtitle {
+    color: #a0aec0;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #cbd5e0;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 0.75rem;
+    border: 2px solid transparent;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #b88658 100%);
+    color: #1a202c;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 163, 115, 0.4);
+    filter: brightness(1.1);
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid;
+}
+
+.alert-danger {
+    background-color: rgba(250, 177, 160, 0.1);
+    color: var(--error-color);
+    border-color: rgba(250, 177, 160, 0.3);
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(30, 34, 32, 0.95);
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent-color), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: #a0aec0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+.dashboard-content {
+    padding: 3rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Cards */
+.card {
+    background-color: var(--secondary-color);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.card-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: white;
+    border-bottom: 2px solid rgba(212, 163, 115, 0.1);
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Tables */
+table {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+th {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #a0aec0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
